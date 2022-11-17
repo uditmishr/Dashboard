@@ -4,14 +4,18 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { Navbar, Footer, Sidebar, Dashboard} from './components';
 import { useStateContext } from './contexts/ContextProvider';
 import './App.css';
+import { FixedUserHandle } from '@syncfusion/ej2/diagrams';
 
 const App = () => {
     const {activeMenu}=useStateContext();
     
     return (
-        <div className='bg-blue-600'> 
+        <div> 
             <BrowserRouter>
-                <div className="flex relatice dark:bg-main-dark-bg">
+                <div style={{backgroundColor:'#2563EB',position:'fixed', top:0,height:'19em', width:'100%'}}>
+
+                </div>
+                <div className="flex relative dark:bg-main-dark-bg">
                     
                     {activeMenu ? (
                         <div className='rounded-2xl ml-4 mt-1 w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
@@ -24,11 +28,11 @@ const App = () => {
                         </div>
                     )}
                     <div className={
-                        `dark:bg-main-bg bg-main-bg min-h-screen  w-full ${activeMenu ? 'rounded md:ml-72 ' : ' felx-2'}`
+                        `bg-main-bg dark:bg-main-bg min-h-screen  w-full ${activeMenu ? 'rounded md:ml-72 ' : ' felx-2'}`
 
 
-                    }>
-                        <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
+                    } >
+                        <div className='fixed md:static bg-blue-600 dark:bg-main-dark-bg navbar w-full'>
                             <Navbar />
                         </div>
                     

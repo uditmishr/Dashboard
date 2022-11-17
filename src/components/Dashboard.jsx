@@ -5,18 +5,18 @@ import { useStateContext} from '../contexts/ContextProvider';
 
 const Dashboard = () => {
   return (
-    <div className='mt-8'>
+    <div style={{backgroundColor:'#2563EB', height:'15em', width:'100%'}}>
         <div>
             <div className='container grid px-6 mx-auto'>
-                <div className='mt-8'>
-                    <div className='grid mt-4 gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4 '>
+                <div className='mt-2 pt-4'>
+                    <div className='grid mt-2 gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4 '>
                         
                         {snipdata.map((item)=>(
-                            <div className=' rounded-md shadow-xs overflow-hidden bg-white dark:bg-gray-800'>
-                                <div className='inline-block'>
+                            <div className=' rounded-md shadow-xs bg-white dark:bg-gray-800'>
+                                <div>
                                     <div key={item.title} className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg  p-2 pt-9 rounded-2xl'>
                                         <div className='flex flex-row'>
-                                        <div className='float-left'>
+                                        <div className='float-left w-3/5'>
                                             <p className='mb-2 text-sm font-medium text-gray-600 dark:text-gray-400'>
                                                     {item.title}
                                             </p>
@@ -24,7 +24,7 @@ const Dashboard = () => {
                                                     {item.value}            
                                             </p> 
                                         </div>
-                                        <div className='float-right'>
+                                        <div className='w-2/5'>
                                             <button type='button' style={{color:item.iconColor,backgroundColor: item.iconBg}} className=' text-2xl rounded-full p-3 hover:drop-shadpw-xl'>
                                                 {item.icon}
                                             </button>
@@ -74,7 +74,7 @@ const Dashboard = () => {
                             
                 
                                                     </div>
-                                                    <div className='relative flex flex-row gap-2 float-left mt-5'>
+                                                    <div className='flex flex-row gap-2 float-left mt-5 w-3/5'>
                                                        <img className='h-25 w-10 rounded-xl m-2 p-1 bg-light-gray' src={item.icon1}/>
                                                        <img className='h-25 w-10 rounded-xl m-2 p-1 bg-light-gray'src={item.icon2}/>
                                                     </div>
